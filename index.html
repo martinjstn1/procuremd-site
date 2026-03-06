@@ -4,237 +4,182 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maryland Procurement Consulting | ProcureMD</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #002147; /* Navy */
             --accent: #C5A059;  /* Gold */
-            --text: #333;
-            --light: #f8f9fa;
+            --bg-light: #f4f7fa;
             --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--white);
-        }
-
-        /* Navigation */
+        /* Navigation - Centered Style */
         nav {
-            padding: 1.5rem 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1.5rem 8%;
             background: var(--white);
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky; top: 0; z-index: 1000;
         }
 
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .logo-group { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { 
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem; color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            line-height: 1;
         }
+        .logo-text { font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--primary); }
 
-        .logo span {
-            color: var(--accent);
-        }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { text-decoration: none; color: var(--primary); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .cta-nav { background: var(--accent); color: white; padding: 10px 20px; border-radius: 4px; }
 
-        /* Hero Section */
+        /* Hero Section with State House Image Overlay */
         header {
-            padding: 100px 10% 80px;
+            position: relative;
+            padding: 120px 10% 100px;
             text-align: center;
-            background: linear-gradient(135deg, #fdfdfd 0%, #f4f7fa 100%);
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+                        url('https://images.unsplash.com/photo-1575306051102-3932828b6d05?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
         }
 
-        h1 {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; }
+        .hero-p { max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; }
+        .btn-main { background: var(--primary); color: white; padding: 15px 40px; text-decoration: none; font-weight: 700; border-radius: 2px; }
 
-        .hero-sub {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            color: #555;
-        }
+        /* Grid & Cards Styling */
+        section { padding: 80px 10%; }
+        .section-tag { text-align: center; font-weight: 700; color: var(--primary); margin-bottom: 10px; text-transform: uppercase; }
+        h2 { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 50px; }
 
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background 0.3s ease;
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            transition: 0.3s;
         }
+        .card:hover { transform: translateY(-10px); }
+        .card-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
 
-        .btn:hover {
-            background: #003366;
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 10%;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .card {
-            padding: 30px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            background: var(--white);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            font-size: 2.25rem;
-            color: var(--primary);
+        /* Pricing Area with Maryland Skyline Graphic */
+        .pricing-section {
+            background: var(--bg-light);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 100px 10%;
         }
-
-        .accent-line {
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 10px auto 30px;
-        }
-
-        h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        /* Pricing Focus */
-        .pricing-box {
-            background: var(--primary);
-            color: var(--white);
-            padding: 60px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .pricing-box h2 {
-            color: var(--white);
-        }
-
-        .pricing-box p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
+        .skyline-bg {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 150px;
+            background: url('https://www.transparenttextures.com/patterns/city-skyline.png');
+            opacity: 0.1; pointer-events: none;
         }
 
         /* Footer */
-        footer {
-            background: #111;
-            color: #aaa;
-            padding: 60px 10% 30px;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 30px;
-        }
-
-        .footer-contact {
-            color: var(--white);
-            margin: 10px 0;
-            display: block;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        .copyright {
-            font-size: 0.85rem;
-            border-top: 1px solid #222;
-            padding-top: 20px;
-        }
+        footer { background: var(--white); padding: 60px 10% 20px; border-top: 1px solid #eee; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 40px; margin-bottom: 40px; }
+        .footer-title { font-weight: 700; margin-bottom: 15px; color: var(--primary); font-size: 0.9rem; }
+        .footer-link { display: block; text-decoration: none; color: #666; font-size: 0.85rem; margin-bottom: 8px; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            section { padding: 60px 5%; }
-            .pricing-box { padding: 30px; }
+            h1 { font-size: 2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Maryland Procurement <span>Consulting</span></div>
+        <div class="logo-group">
+            <div class="logo-icon">M</div>
+            <div class="logo-text">Maryland<br>Procurement Consulting</div>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Experience</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="mailto:office@procuremd.com" class="cta-nav">Request a Consultation</a></li>
+        </ul>
     </nav>
 
     <header>
-        <h1>Expert State of Maryland Procurement Strategy</h1>
-        <p class="hero-sub">With years of dedicated experience navigating Maryland state systems, we ensure compliance, efficiency, and successful contract awards for your organization.</p>
-        <a href="mailto:office@procuremd.com" class="btn">Request a Consultation</a>
+        <div class="section-tag">Expert Guidance. Proven Results.</div>
+        <h1>Navigating State of Maryland Procurement and Grants.</h1>
+        <p class="hero-p">With years of dedicated procurement experience with the State of Maryland, we ensure compliance, efficiency, and success for your organization. We specialize in state contracts, grant requirements, and all procurement types.</p>
+        <a href="mailto:office@procuremd.com" class="btn-main">GET STARTED</a>
     </header>
 
-    <section id="expertise">
-        <h2>Our Expertise</h2>
-        <div class="accent-line"></div>
+    <section>
+        <div class="section-tag">1. Our Expertise</div>
+        <h2>Years of Maryland Experience</h2>
         <div class="grid">
             <div class="card">
-                <h3>State Experience</h3>
-                <p>We leverage years of deep-seated experience within the State of Maryland’s procurement framework to guide you through complex regulatory landscapes.</p>
+                <span class="card-icon">🏛️</span>
+                <h3>State of Maryland Focus</h3>
+                <p>Niche expertise in Maryland-specific solicitations and agency standards.</p>
             </div>
             <div class="card">
-                <h3>Full-Spectrum Support</h3>
-                <p>From RFP and IFB drafting to contract management, we assist in all procurement types across every stage of the project lifecycle.</p>
+                <span class="card-icon">📄</span>
+                <h3>Proven Track Record</h3>
+                <p>Extensive history of successful contract awards and management.</p>
             </div>
             <div class="card">
-                <h3>Grant Compliance</h3>
-                <p>We specialize in grant program requirements, ensuring your procurement processes meet every standard required for continued funding.</p>
+                <span class="card-icon">🤝</span>
+                <h3>Deep Compliance Knowledge</h3>
+                <p>Navigating the "red tape" so you don't have to.</p>
             </div>
         </div>
     </section>
 
-    <section id="pricing" style="background-color: #fcfcfc;">
-        <div class="pricing-box">
-            <h2>Transparent Pricing</h2>
-            <div class="accent-line" style="background: var(--white);"></div>
-            <p>Our procurement fees are <strong>fixed based on project complexity</strong>, providing your organization with budget predictability.</p>
-            <p style="margin-top: 20px; font-style: italic; font-size: 1.1rem;">In most cases, our consulting fees can be billed directly against grant funding.</p>
-        </div>
+    <section class="pricing-section">
+        <div class="section-tag">3. Pricing</div>
+        <h2>Transparent, Fixed-Fee Structure</h2>
+        <p class="hero-p">We understand budget predictability is vital. Our general procurement fee is fixed based on project complexity. Fees are structured to be generally billable against your grant funding.</p>
+        <a href="mailto:office@procuremd.com" class="btn-main" style="background:var(--accent)">LEARN ABOUT PRICING</a>
+        <div class="skyline-bg"></div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="logo" style="color: white; margin-bottom: 20px;">Procure<span>MD</span></div>
-            <p>Professional Procurement & Grant Consulting</p>
-            <a href="mailto:office@procuremd.com" class="footer-contact">office@procuremd.com</a>
-            <a href="tel:4439446976" class="footer-contact">443-944-6976</a>
+        <div class="footer-grid">
+            <div>
+                <div class="logo-group" style="margin-bottom: 15px;">
+                    <div class="logo-icon">M</div>
+                    <div class="logo-text">Maryland<br>Procurement Consulting</div>
+                </div>
+                <p style="font-size: 0.8rem;">Expert guidance for state-level acquisitions and grant compliance.</p>
+            </div>
+            <div>
+                <div class="footer-title">Services</div>
+                <a href="#" class="footer-link">Experience</a>
+                <a href="#" class="footer-link">Case Studies</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+            <div>
+                <div class="footer-title">Contact</div>
+                <p class="footer-link">office@procuremd.com</p>
+                <p class="footer-link">443-944-6976</p>
+                <p class="footer-link">Maryland, USA</p>
+            </div>
+            <div>
+                <div class="footer-title">Newsletter</div>
+                <input type="email" placeholder="Email" style="padding: 10px; width: 100%; border: 1px solid #ddd; margin-bottom: 10px;">
+                <button style="background: var(--accent); border: none; color: white; padding: 10px 20px; cursor: pointer; width: 100%;">SUBSCRIBE</button>
+            </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 Maryland Procurement Consulting. All rights reserved.
-        </div>
+        <p style="text-align: center; font-size: 0.75rem; color: #999;">&copy; 2026 Maryland Procurement Consulting. All rights reserved.</p>
     </footer>
 
 </body>
