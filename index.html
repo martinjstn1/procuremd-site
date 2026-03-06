@@ -14,7 +14,20 @@
     <header>
         <div class="container">
             <a href="#" class="logo">
-                <img src="images/logo.png" alt="Maryland Procurement Consulting Logo">
+                <svg width="60" height="60" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="95" fill="#002147" stroke="#C5A059" stroke-width="4"/>
+                    <circle cx="100" cy="100" r="82" fill="none" stroke="#C5A059" stroke-width="1" stroke-dasharray="2,2"/>
+                    <path d="M70 140 H130 V120 Q100 80 70 120 Z" fill="#C5A059" opacity="0.9"/>
+                    <rect x="95" y="70" width="10" height="20" fill="#C5A059"/>
+                    <circle cx="100" cy="65" r="5" fill="#C5A059"/>
+                    <path id="curve" d="M 30,100 A 70,70 0 1,1 170,100" fill="none" />
+                    <text font-family="Serif" font-size="12" fill="#C5A059" letter-spacing="2">
+                        <textPath href="#curve" startOffset="50%" text-anchor="middle">MARYLAND PROCUREMENT CONSULTING</textPath>
+                    </text>
+                </svg>
+                <div class="logo-text">
+                    <strong>MARYLAND</strong><br>PROCUREMENT<br>CONSULTING
+                </div>
             </a>
             <nav>
                 <ul>
@@ -23,7 +36,7 @@
                     <li><a href="#">Experience</a></li>
                     <li><a href="#">Pricing</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="#" class="btn-primary">REQUEST A CONSULTATION</a></li>
+                    <li><a href="#" class="btn-gold">REQUEST A CONSULTATION</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,12 +46,12 @@
         <section class="hero">
             <div class="container grid-2">
                 <div class="hero-content">
-                    <h1>NAVIGATING STATE OF MARYLAND<br>PROCUREMENT AND GRANTS.</h1>
+                    <h1>NAVIGATING STATE OF MARYLAND PROCUREMENT AND GRANTS.</h1>
                     <p>With years of dedicated procurement experience with the State of Maryland, we ensure compliance, efficiency, and success for your organization. We specialize in state contracts, grant requirements, and all procurement types.</p>
                     <a href="#" class="btn-dark">GET STARTED</a>
                 </div>
                 <div class="hero-image">
-                    <img src="images/hero.jpg" alt="A grand Maryland state building.">
+                    <img src="https://images.unsplash.com/photo-1575306051102-39f826645318?auto=format&fit=crop&q=80&w=800" alt="Maryland State House">
                 </div>
             </div>
         </section>
@@ -48,15 +61,15 @@
                 <h2>1. OUR EXPERTISE: YEARS OF MARYLAND EXPERIENCE</h2>
                 <div class="grid-3">
                     <div class="card">
-                        <img src="images/icon-state.png" alt="Icon for State of Maryland focus.">
+                        <div class="icon-circle">🏛️</div>
                         <h3>State of Maryland Focus</h3>
                     </div>
                     <div class="card">
-                        <img src="images/icon-contract.png" alt="Icon for Proven Track Record.">
+                        <div class="icon-circle">📜</div>
                         <h3>Proven Track Record</h3>
                     </div>
                     <div class="card">
-                        <img src="images/icon-compliance.png" alt="Icon for Deep Compliance Knowledge.">
+                        <div class="icon-circle">🤝</div>
                         <h3>Deep Compliance Knowledge</h3>
                     </div>
                 </div>
@@ -68,17 +81,17 @@
                 <h2>2. SERVICES FOR EVERY PROCUREMENT NEED</h2>
                 <div class="grid-3">
                     <div class="service-item">
-                        <img src="images/icon-state.png" alt="State Contract Assistance icon">
+                        <div class="icon-flat">📄</div>
                         <h4>State Contract Assistance</h4>
                         <p>RFP, IFB, Small Business</p>
                     </div>
                     <div class="service-item">
-                        <img src="images/icon-grant.png" alt="Grant Program Requirements icon">
+                        <div class="icon-flat">📊</div>
                         <h4>Grant Program Requirements</h4>
                         <p>Compliance Reporting Strategy</p>
                     </div>
                     <div class="service-item">
-                        <img src="images/icon-consulting.png" alt="Procurement Consulting icon">
+                        <div class="icon-flat">💡</div>
                         <h4>Procurement Consulting</h4>
                         <p>Process Optimization Advisory</p>
                     </div>
@@ -98,28 +111,39 @@
     <footer>
         <div class="container grid-4">
             <div class="footer-logo">
-                <img src="images/logo-footer.png" alt="Maryland Procurement Consulting footer logo.">
+                <svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="95" fill="#002147" stroke="#C5A059" stroke-width="4"/>
+                    <circle cx="100" cy="100" r="82" fill="none" stroke="#C5A059" stroke-width="1" stroke-dasharray="2,2"/>
+                    <path d="M70 140 H130 V120 Q100 80 70 120 Z" fill="#C5A059" opacity="0.9"/>
+                    <rect x="95" y="70" width="10" height="20" fill="#C5A059"/>
+                    <circle cx="100" cy="65" r="5" fill="#C5A059"/>
+                    <path id="curve" d="M 30,100 A 70,70 0 1,1 170,100" fill="none" />
+                    <text font-family="Serif" font-size="12" fill="#C5A059" letter-spacing="2">
+                        <textPath href="#curve" startOffset="50%" text-anchor="middle">MARYLAND PROCUREMENT CONSULTING</textPath>
+                    </text>
+                </svg>
             </div>
-            <div class="footer-nav">
-                <h4>Services</h4>
-                <h4>Experience</h4>
-                <h4>Case Studies</h4>
-                <h4>Contact</h4>
+            <div>
+                <h4>Navigation</h4>
+                <p><a href="#">Services</a></p>
+                <p><a href="#">Experience</a></p>
+                <p><a href="#">Case Studies</a></p>
             </div>
-            <div class="footer-contact">
+            <div>
                 <h4>Contact</h4>
                 <p>✉ email@mail.com</p>
-                <p>📞 (123) 456-7890</p>
+                <p>📞 (901) 469-2560</p>
                 <p>📍 Baltimore, MD</p>
             </div>
             <div class="footer-newsletter">
                 <h4>Newsletter</h4>
                 <input type="email" placeholder="Email">
-                <button type="submit" class="btn-primary">Subscribe</button>
+                <button type="submit" class="btn-gold-small">Subscribe</button>
             </div>
         </div>
         <div class="container copyright">
-            <p>&copy; 2024 Maryland Procurement Consulting. All rights reserved.</p>
+            <hr>
+            <p>&copy; 2026 Maryland Procurement Consulting. All rights reserved.</p>
         </div>
     </footer>
 
