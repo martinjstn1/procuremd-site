@@ -1,109 +1,26 @@
-/* --- CSS Resets --- */
-*, *::before, *::after {
-    box-sizing: border-box;
+:root {
+    --gold: #C5A059;
+    --navy: #002147;
+    --dark: #1a1a1a;
+    --light-bg: #f9f9f9;
 }
 
 body {
     margin: 0;
     font-family: 'Lato', sans-serif;
-    color: #333333;
+    color: var(--dark);
     line-height: 1.6;
-    background-color: #FDFDFD;
 }
 
-/* --- Global Styles --- */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.text-center {
-    text-align: center;
-}
-
-/* --- Color Palette --- */
-:root {
-    --primary-color: #BC9F67; /* The gold/tan color from the button */
-    --text-color-dark: #333333;
-    --text-color-light: #FFFFFF;
-    --bg-light: #FDFDFD;
-    --border-color: #E0E0E0;
-}
-
-/* --- Typography --- */
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: var(--text-color-dark);
-    margin-bottom: 1.5rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    color: var(--text-color-dark);
-    margin-bottom: 3rem;
-    text-transform: uppercase; /* Match design */
-}
-
-/* --- Buttons --- */
-.btn-primary, .btn-dark {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-}
-
-.btn-primary:hover {
-    background-color: #a08857; /* A slightly darker shade for hover */
-}
-
-.btn-dark {
-    background-color: #333333;
-    color: var(--text-color-light);
-    border: none;
-}
-
-.btn-dark:hover {
-    background-color: #555555;
-}
-
-/* --- Header --- */
 header {
-    background-color: var(--bg-light);
-    border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
 }
 
 header .container {
@@ -112,163 +29,106 @@ header .container {
     align-items: center;
 }
 
-header .logo img {
-    height: 60px; /* Set a specific height to keep it consistent */
-}
-
-header nav ul {
+/* Logo Styling */
+.logo {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    text-decoration: none;
 }
 
-header nav a {
-    font-size: 0.9rem;
-}
-
-header nav a:hover {
-    color: var(--primary-color);
-}
-
-/* Special button styling inside the nav */
-header nav .btn-primary {
-    color: var(--text-color-light);
-    margin-left: 10px;
-}
-
-header nav .btn-primary:hover {
-    color: var(--text-color-light);
-}
-
-/* --- Main Sections --- */
-section {
-    padding: 80px 0;
-}
-
-/* Grid layout for common sections */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-/* Hero Section */
-.hero {
-    background-color: #FFFFFF; /* White background */
-}
-
-.hero-content h1 {
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: var(--dark);
+    letter-spacing: 1px;
     line-height: 1.2;
+    text-transform: uppercase;
 }
 
-.hero-content p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+.logo-text strong {
+    font-size: 1.2rem;
 }
 
-/* Expertise Section */
-.expertise {
-    background-color: #FFFFFF;
-}
-
-.expertise .card {
-    background-color: var(--bg-light);
-    padding: 40px;
-    border: 1px solid #EDEDED;
-    border-radius: 8px;
-    text-align: center;
+/* Navigation */
+nav ul {
+    list-style: none;
     display: flex;
-    flex-direction: column;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-.expertise .card img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
-}
-
-.expertise .card h3 {
-    font-size: 1rem;
-    color: var(--text-color-dark);
-}
-
-/* Services Section */
-.services .service-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 20px;
-}
-
-.services h4 {
-    font-size: 1rem;
-    margin-bottom: 5px;
-}
-
-.services p {
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 700;
     font-size: 0.9rem;
-    color: #555555;
+}
+
+/* Buttons */
+.btn-gold {
+    background: var(--gold);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.btn-gold-small {
+    background: var(--gold);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.btn-dark {
+    background: var(--dark);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Sections */
+section { padding: 80px 0; }
+.text-center { text-align: center; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+.grid-4 { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 30px; }
+
+h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 20px; }
+h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+
+/* Expertise Cards */
+.card {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.icon-circle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.icon-flat {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 /* Pricing Section */
-.pricing {
-    background-color: var(--bg-light); /* Light blue/grey section */
-    border-top: 1px solid var(--border-color);
-}
+.pricing { background: var(--light-bg); }
+.pricing p { max-width: 800px; margin: 20px auto 40px; }
 
-.pricing p {
-    max-width: 700px;
-    margin: 0 auto 3rem auto; /* Center the text block */
-}
-
-/* --- Footer --- */
-footer {
-    background-color: #FFFFFF;
-    border-top: 1px solid var(--border-color);
-    padding: 60px 0;
-    font-size: 0.9rem;
-}
-
-.footer-logo img {
-    height: 70px;
-}
-
-.grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-}
-
-footer h4 {
-    font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.footer-contact p, .footer-nav h4 {
-    margin-bottom: 0.8rem;
-}
-
-.footer-newsletter input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
-
-/* Add styles for the copyright section */
-.copyright {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.8rem;
-    color: #888888;
-}
+/* Footer */
+footer { padding: 60px 0 20px; background: white; border-top: 1px solid #eee; }
+footer h4 { margin-bottom: 20px; text-transform: uppercase; font-size: 0.9rem; }
+footer a { text-decoration: none; color: #666; }
+footer input { padding: 8px; border: 1px solid #ddd; width: 100%; margin-bottom: 10px; }
+.copyright { margin-top: 40px; font-size: 0.8rem; color: #999; }
+hr { border: 0; border-top: 1px solid #eee; margin-bottom: 20px; }
