@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maryland Procurement Consulting | ProcureMD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #002147; /* Navy */
+            --accent: #C5A059;  /* Gold */
+            --text: #333;
+            --light: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        header {
+            padding: 100px 10% 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #fdfdfd 0%, #f4f7fa 100%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-sub {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #003366;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto 30px;
+        }
+
+        h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Pricing Focus */
+        .pricing-box {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .pricing-box h2 {
+            color: var(--white);
+        }
+
+        .pricing-box p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 60px 10% 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 30px;
+        }
+
+        .footer-contact {
+            color: var(--white);
+            margin: 10px 0;
+            display: block;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            section { padding: 60px 5%; }
+            .pricing-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Maryland Procurement <span>Consulting</span></div>
+    </nav>
+
+    <header>
+        <h1>Expert State of Maryland Procurement Strategy</h1>
+        <p class="hero-sub">With years of dedicated experience navigating Maryland state systems, we ensure compliance, efficiency, and successful contract awards for your organization.</p>
+        <a href="mailto:office@procuremd.com" class="btn">Request a Consultation</a>
+    </header>
+
+    <section id="expertise">
+        <h2>Our Expertise</h2>
+        <div class="accent-line"></div>
+        <div class="grid">
+            <div class="card">
+                <h3>State Experience</h3>
+                <p>We leverage years of deep-seated experience within the State of Maryland’s procurement framework to guide you through complex regulatory landscapes.</p>
+            </div>
+            <div class="card">
+                <h3>Full-Spectrum Support</h3>
+                <p>From RFP and IFB drafting to contract management, we assist in all procurement types across every stage of the project lifecycle.</p>
+            </div>
+            <div class="card">
+                <h3>Grant Compliance</h3>
+                <p>We specialize in grant program requirements, ensuring your procurement processes meet every standard required for continued funding.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" style="background-color: #fcfcfc;">
+        <div class="pricing-box">
+            <h2>Transparent Pricing</h2>
+            <div class="accent-line" style="background: var(--white);"></div>
+            <p>Our procurement fees are <strong>fixed based on project complexity</strong>, providing your organization with budget predictability.</p>
+            <p style="margin-top: 20px; font-style: italic; font-size: 1.1rem;">In most cases, our consulting fees can be billed directly against grant funding.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="color: white; margin-bottom: 20px;">Procure<span>MD</span></div>
+            <p>Professional Procurement & Grant Consulting</p>
+            <a href="mailto:office@procuremd.com" class="footer-contact">office@procuremd.com</a>
+            <a href="tel:4439446976" class="footer-contact">443-944-6976</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Maryland Procurement Consulting. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
